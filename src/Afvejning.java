@@ -1,20 +1,19 @@
 import java.util.Scanner;
 public class Afvejning {
+	
+	Iui ui;
+	
+	public Afvejning(Iui ui){
+		this.ui = ui;
+	}
 
 	public double UdskrivVaegt() {
 		// TODO Auto-generated method stub
-		
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Skriv tara vægt i kg og tryk enter:");
-		double Tara = sc.nextDouble();
-		
-		System.out.println("Skriv brutto vægt i kg og tryk enter:");
-		double Brutto = sc.nextDouble();
-		
-		double Netto = Brutto-Tara;
-		
-		System.out.println("Netto vægten er: " +Netto);
-		return Netto;
+		double tara = ui.getTaraWeight();
+		double brutto = ui.getBruttoWeight();
+		double netto = brutto-tara;
+		ui.printNettoWeight(netto);
+		return netto;
 	}
 
 }

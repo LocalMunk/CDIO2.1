@@ -12,13 +12,6 @@ public class OperatorDTO {
 	private boolean SysAdmin;
 	private Scanner keyboard;
 
-	{
-
-		for (int i = 11; i <= 99; i++) {
-			Users.add(i);
-		}
-	}
-
 	private int userCounter = 0;
 
 	public OperatorDTO(String oprNavn, long cpr, int oprid) {
@@ -37,6 +30,7 @@ public class OperatorDTO {
 
 	public void setOprNavn(String navn) {
 		this.oprNavn = navn;
+		this.generateIni(navn);
 	}
 
 	public String getIni() {
@@ -217,5 +211,11 @@ public class OperatorDTO {
 	}
 	public void resetPassword(String password){
 		this.password = password;
+	}
+	
+	public String toString(){
+		String out;
+		out = ("Logged ind som: " + this.oprNavn + ", User ID:" + this.oprId);
+		return out;
 	}
 }

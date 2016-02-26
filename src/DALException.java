@@ -1,4 +1,1 @@
-
-public class DALException extends Exception {
-
-}
+public class DALException extends Exception {}
